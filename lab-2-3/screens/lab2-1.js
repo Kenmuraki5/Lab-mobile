@@ -16,7 +16,7 @@ const Lab2_1 = ({navigation}) => {
           {but.map((x) => { 
             return <View style={[{ margin: 10, width: 300, }]} key={x}>
               <Button title={x} onPress={() => navigation.navigate(x)
-        }/>
+}/>
               </View> 
             })}
         </View>
