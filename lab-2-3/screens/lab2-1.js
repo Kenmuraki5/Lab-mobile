@@ -6,13 +6,13 @@ const Lab2_1 = ({navigation}) => {
     const but = ['Lab2.2', 'Lab3.1', 'Lab3.2']
     return (
       <SafeAreaView style={styles.container}>
-        <View style={[{ alignItems: 'center' }, { flex: 5 }, { justifyContent: 'center' }]}>
+        <View style={[{ alignItems: 'center' }, { flex: 8 }, { justifyContent: 'center' }]}>
           <Image style={{ width: 120, height: 100, margin: 20 }} source={require('../IT_Logo.png')}/>
           <Text style={{ fontSize: 25, fontWeight: 'bold' }}>คณะเทคโนโลยีสารสนเทศ</Text>
           <Text>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</Text>
         </View>
   
-        <View style={{ flex: 2, justifyContent: 'center' }}>
+        <View style={{ flex: 4, justifyContent: 'center' }}>
           {but.map((x) => { 
             return <View style={[{ margin: 10, width: 300, }]} key={x}>
               <Button title={x} onPress={() => navigation.navigate(x)
