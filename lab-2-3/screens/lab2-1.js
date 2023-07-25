@@ -7,7 +7,7 @@ const Lab2_1 = ({navigation}) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={[{ alignItems: 'center' }, { flex: 3 }, { justifyContent: 'center' }]}>
-          <Image style={{ width: 120, height: 100, margin: 20 }} source={require('../IT_Logo.png')}/>
+          <Image style={{ width: 120, height: 120, margin: 20 }} source={require('../IT_Logo.png')} resizeMode='contain'/>
           <Text style={{ fontSize: 25, fontWeight: 'bold' }}>คณะเทคโนโลยีสารสนเทศ</Text>
           <Text>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</Text>
         </View>

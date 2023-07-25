@@ -4,8 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Lab3_1 = ({ navigation }) => {
-    const [text, setText] = useState("");
-    const [text2, setText2] = useState([]);
+    const [text, setText] = useState(""); // input
+    const [text2, setText2] = useState([]); // output
     return (
         <SafeAreaView style={styles.container}>
             <Text style={{ fontWeight: 'bold', fontSize: 20, marginBottom: 12 }}>สมุดบันทึก</Text>
@@ -16,12 +16,12 @@ const Lab3_1 = ({ navigation }) => {
                     value={text}
                     onChangeText={(input) => { setText(input); }}
                 />
-                <Button title='บันทึก' onPress={text ? () => { setText2([...text2, text]); setText("") } : undefined}></Button>
+                <Button title='บันทึก' onPress={text ? () => { setText2([...text2, text]); setText(""); } : undefined}></Button>
             </View>
             <FlatList
                 data={text2}
                 renderItem={({ item }) => <Text style={{ fontSize: 70, textAlign: 'center' }}>{item}</Text>}
-                keyExtractor={(item, index) => index.toString()} 
+                keyExtractor={(item, index) => index} 
                 style={{ width: '100%' }} 
             />
             <StatusBar style="auto" />
