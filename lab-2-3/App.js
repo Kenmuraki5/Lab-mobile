@@ -9,7 +9,7 @@ import { Lab3_1 } from './screens/lab3-1'
 import { Lab3_2 } from './screens/lab3-2'
 const Stack = createNativeStackNavigator();
 
-const MyStack = () => {
+export default function MyStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -26,5 +26,3 @@ const MyStack = () => {
   );
 };
 
-
-export default MyStack
