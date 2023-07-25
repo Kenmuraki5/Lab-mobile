@@ -15,7 +15,10 @@ const Lab3_1 = ({ navigation }) => {
                 value={text}
                 onChangeText={(input) => { setText(input); }}
             />
-            <Button title='บันทึก' onPress={() => { setText2([...text2, text]); setText("") }}></Button>
+            <View style={{width:'70%'}}>
+                <Button title='บันทึก' onPress={text?() => { setText2([...text2, text]); setText("") } : undefined}></Button>
+            </View>
+            
             <FlatList
                 data={text2}
                 renderItem={({ item }) => <Text style={{ fontSize: 70 , textAlign:'center'}}>{item}</Text>}
