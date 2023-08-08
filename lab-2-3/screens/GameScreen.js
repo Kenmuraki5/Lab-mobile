@@ -39,7 +39,7 @@ const GameScreen = (props) => {
   // ฟังก์ชันสำหรับอัพเดทค่าที่ผู้เล่นกรอกให้กับสเตท enteredValue
   const numberInputHandler = (inputText) => {
     //   ...เพิ่มโค้ด...อัพเดทค่าสเตท enteredValue ด้วยค่า inputText ที่รับมา
-    setEnteredValue(inputText)
+      setEnteredValue(inputText)
 
   };
 
@@ -54,7 +54,7 @@ const GameScreen = (props) => {
   const confirmInputHandler = () => {
     // ...เพิ่มโค้ด แปลงค่า enteredValue ให้เป็นตัวเลข
     // ...เพิ่มโค้ด อัพเดทค่าในสเตทต่างๆ ตามที่กำหนด
-    setSelectedNumber(parseInt(enteredValue))
+    enteredValue?setSelectedNumber(parseInt(enteredValue)):setSelectedNumber(0)
     setConfirmed(true)
     setEnteredValue("")
     setRounds(rounds + 1)
