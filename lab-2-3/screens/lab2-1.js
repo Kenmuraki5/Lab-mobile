@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Lab2_1 = ({navigation}) => {
-    const but = ['Lab2.2', 'Lab3.1', 'Lab3.2']
+    const but = ['Lab2.2', 'Lab3.1', 'Lab3.2', 'lab4']
     return (
       <SafeAreaView style={styles.container}>
         <View style={[{ alignItems: 'center' }, { flex: 3 }, { justifyContent: 'center' }]}>
