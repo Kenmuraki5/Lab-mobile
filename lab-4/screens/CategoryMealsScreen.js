@@ -21,8 +21,8 @@ const CategoryMealsScreen = ({route, navigation}) => {
         image={itemData.item.imageUrl}
         onSelectMeal={() => {
           // เขียนโค้ดเพิ่ม
-          console.log(itemData.item.steps)
-          navigation.navigate("MealDetailScreen", {categoryTitle:itemData.item.title, step:itemData.item.steps})
+          console.log(itemData.item)
+          navigation.navigate("MealDetailScreen", {categoryTitle:itemData.item.title, step:itemData.item.steps, mealid:itemData.item.id})
         }}
       />
 

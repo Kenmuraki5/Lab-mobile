@@ -11,13 +11,14 @@ const MealDetailScreen = ({route, navigation}) => {
       <Text>Dish: {route.params.categoryTitle}</Text>
       <FlatList
         data={route.params.step}
-        renderItem={({item, index})=>{return <Text style={styles.text}>steps:{index+1}{item}</Text>}}
+        renderItem={({item, index})=>{return <Text style={styles.text}>Steps{index+1} : {item}</Text>}}
       />
 
       <Button
         title="Go Back to Categories"
         onPress={() => {
           // เขียนโค้ดเพิ่ม
+          navigation.navigate("CategoriesScreen")
         }}
       />
     </View>
