@@ -33,11 +33,11 @@ const CategoryMealsScreen = ({route, navigation}) => {
     );
   };
 
-  const catId = route.params
+  const catId = route.params.id
 
 
   const displayedMeals = MEALS.filter(
-    (meal) => meal.categoryIds.indexOf(catId.categoryId) >= 0
+    (meal) => meal.categoryIds.indexOf(catId) >= 0
   );
 
   return (

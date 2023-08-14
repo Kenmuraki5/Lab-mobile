@@ -28,7 +28,8 @@ const CategoriesScreen = ({navigation}) => {
         title={itemData.item.title} 
         color={itemData.item.color} 
         onSelect={()=> {
-          navigation.navigate("CategoryMealsScreen", {categoryId:itemData.item.id, categoryTitle:itemData.item.title})
+          console.log(itemData)
+          navigation.navigate("CategoryMealsScreen", {id:itemData.item.id, categoryTitle:itemData.item.title})
         }}>
         {/* <Text>{console.log(itemData.item.title)}</Text> */}
       </CategoryGridTile>
