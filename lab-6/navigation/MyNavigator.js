@@ -9,7 +9,7 @@ const Drawer = createDrawerNavigator();
 export default function MyNavigator() {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Meals" options={{headerShown:false}} component={MealsFavTabNavigator} />
+      <Drawer.Screen name="MealScreen" options={{headerShown:false}} component={MealsFavTabNavigator} />
       <Drawer.Screen name="Filters" options={{headerShown:false}} component={FiltersNavigatorStack} />
     </Drawer.Navigator>
   );
