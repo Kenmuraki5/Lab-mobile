@@ -2,15 +2,15 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Home from "../screens/Home";
 import Hello from "../screens/Hello"
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function StackView() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="hello" component={Hello} />
-    </Stack.Navigator>
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} options={{headerShown:false}}/>
+      <Tab.Screen name="hello" component={Hello} options={{headerShown:false}}/>
+    </Tab.Navigator>
   );
 }

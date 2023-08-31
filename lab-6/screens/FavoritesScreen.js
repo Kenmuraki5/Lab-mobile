@@ -8,7 +8,7 @@ const FavoritesScreen = ({ navigation}) => {
   const favMeals = MEALS.filter((meal) => meal.id === "m1" || meal.id === "m2");
   return (
     <View style={styles.screen}>
-      <MealList listData={favMeals} navigation={navigation}/>
+      <MealList listData={favMeals} navigation={navigation} name={"Favorites"}/>
     </View>
   );
 };
