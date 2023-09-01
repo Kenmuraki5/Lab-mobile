@@ -26,7 +26,6 @@ const Subject = ({ route, navigation }) => {
                     <Button title={"ค้นหา"} onPress={year && term ? () => {
                         if (year == 1 && term == 1) {
                             setarray(category.yonetermone)
-                            console.log(newa)
                         }
                         else if (year == 1 && term == 2) {
                             setarray(category.yearonetermtwo)
@@ -34,25 +33,27 @@ const Subject = ({ route, navigation }) => {
                         else if (year == 2 && term == 1) {
 
                             setarray(category.yeartwotermone)
-                            console.log(newa)
                         }
-                        else{
+                        else {
                             setarray([])
                         }
                     } : undefined}></Button>
                 </View>
             </View>
             <View style={{ flex: 9, marginTop: 10 }}>
-                <FlatList
-                    data={newa}
-                    renderItem={({ item, index }) => {
-                        return <Text>{item}</Text>
-                    }
-                    }
-                />
+                {!newa.length? (
+                    <Text>No information</Text>
+                ) : (
+                    <FlatList
+                        data={newa}
+                        renderItem={({ item, index }) => {
+                            return <Text>{item}</Text>;
+                        }}
+                    />
+                )}
             </View>
             <View style={{ flex: 1, justifyContent: 'center' }}>
-                <Button title={"กลับสู่หน้าหลักสูตรรวม"} onPress={()=>{navigation.navigate("Program")}} />
+                <Button title={"กลับสู่หน้าหลักสูตรรวม"} onPress={() => { navigation.navigate("Program") }} />
             </View>
             <StatusBar style="auto" />
         </SafeAreaView>
