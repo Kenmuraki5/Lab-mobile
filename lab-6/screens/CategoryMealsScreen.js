@@ -13,7 +13,7 @@ import MealList from "../components/MealList"
 const CategoryMealsScreen = ({route, navigation}) => {
   return (
     <View style={styles.screen}>
-      <MealList listData={MEALS} navigation={navigation} name={"MealDetailScreen"}/>
+      <MealList listData={MEALS} navigation={navigation}/>
     </View>
 
     // ส่วนนี้ <View>...</View>ใช้เพื่อการทดลอง และให้คอมเมนต์โค้ดส่วนนี้และเรียกใช้ <FlatList> ข้างบนแทน

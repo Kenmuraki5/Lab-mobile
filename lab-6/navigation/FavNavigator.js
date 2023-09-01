@@ -9,7 +9,7 @@ export default function FavNavigatorStack() {
   return (
     <FavNavigator.Navigator>
       <FavNavigator.Screen name="Favorites" component={FavoritesScreen} />
-      <FavNavigator.Screen name="MealDetailFavouriteScreen" component={MealDetailScreen} />
+      <FavNavigator.Screen name="MealDetailScreen" component={MealDetailScreen} />
     </FavNavigator.Navigator>
   );
 }

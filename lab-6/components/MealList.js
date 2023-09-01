@@ -11,17 +11,7 @@ const MealList = (props) => {
         affordability={itemData.item.affordability}
         image={itemData.item.imageUrl}
         onSelectMeal={() => {
-          if(props.name == "MealDetailFavouriteScreen"){
-            console.log(props.name);
-            props.navigation.navigate("MealDetailFavouriteScreen", {categoryTitle:itemData.item.title, step:itemData.item.steps, mealid:itemData.item.id})
-          }
-          else{
-            // เขียนโค้ดเพิ่ม
-            console.log(props.name);
-            props.navigation.navigate("MealDetailScreen", {categoryTitle:itemData.item.title, step:itemData.item.steps, mealid:itemData.item.id})
-          }
-          
-          
+          props.navigation.navigate("MealDetailScreen", {categoryTitle:itemData.item.title, step:itemData.item.steps, mealid:itemData.item.id})
         }}
       />
 
