@@ -28,6 +28,11 @@ export default Spring = ({ navigation }) => {
                 toValue: 1,
                 duration: 5000,
                 useNativeDriver: true,
+            }),
+            Animated.timing(spinAnim, {
+                toValue: 0,
+                duration: 5000,
+                useNativeDriver: true,
             })
         ]).start(() => {
             opacity.setValue(1);

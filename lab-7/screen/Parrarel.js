@@ -8,31 +8,23 @@ export default Spring = ({ navigation }) => {
     const animV2 = useRef(new Animated.Value(0)).current;
 
     const spin = animV2.interpolate({
-        inputRange: [0, 1, 2, 3, 4, 5, 6, 7, 8],
-        outputRange: [0, -100, -60, -40, 0, 40, 60, 100, 0],
+        inputRange: [0, 1, 2, 3, 4],
+        outputRange: [0, -70, 0, 70, 0],
     });
 
     const animate = () => {
         console.log("animate...");
         Animated.parallel([
-            Animated.sequence([
-                Animated.timing(animV1, {
-                    toValue: 2,
-                    friction:1,
-                    duration: 500,
-                    useNativeDriver: true,
-                }),
-                Animated.timing(animV1, {
-                    toValue: 1,
-                    friction:1,
-                    duration: 500,
-                    useNativeDriver: true,
-                })
-            ]),
-            Animated.spring(animV2, {
-                toValue: 8,        
-                duration:1000,
+            Animated.spring(animV1, {
+                toValue:1.4,
+                friction:1,
                 useNativeDriver: true,
+            }),
+            Animated.timing(animV2, {
+                toValue: 4,
+                useNativeDriver: true,
+                duration:3500,
+                easing:Easing.bounce
 
             }),
         ]).start(() => {
