@@ -15,11 +15,8 @@ const mealsReducer = (state = initialState, action) => {
         return state;
       }
       else{
-        const mealToAdd = state.meals.find(meal => meal.id === action.mealId);
-        if (mealToAdd) {
-          state.favoriteMeals.push(mealToAdd);
-          return state;
-        }
+        state.favoriteMeals.push(state.meals.find(meal => meal.id === action.mealId));
+        return state;
       }
     default:
       return state;
