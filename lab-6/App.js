@@ -16,7 +16,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <MealsFavTabNavigator />
+       <MyNavigator/>
       </NavigationContainer>
     </Provider>
   );
