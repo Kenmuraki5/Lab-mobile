@@ -3,15 +3,15 @@ import { StyleSheet, View, Alert } from "react-native";
 import firebase from "../database/firebaseDB";
 import { Button, Input, Image } from "react-native-elements";
 
-function Example02({navigation}) {
+function AddStudent({navigation}) {
   const [id, setid] = useState("");
   const [name, setName] = useState("");
   const [gpa, setgpa] = useState("");
 
-  const storeSubject = () => {
+  const storeStudents = () => {
     firebase
       .firestore()
-      .collection("subjects")
+      .collection("students")
       .add({
         id: id,
         name: name,
@@ -33,22 +33,22 @@ function Example02({navigation}) {
         containerStyle={{ marginLeft: "auto", marginRight: "auto" }}
       />
       <Input
-        placeholder={"Subject id"}
+        placeholder={"Students id"}
         value={id}
         onChangeText={(val) => setid(val)}
       />
       <Input
-        placeholder={"Subject Name"}
+        placeholder={"Students Name"}
         value={name}
         onChangeText={(val) => setName(val)}
       />
       <Input
-        placeholder={"Subject gpa"}
+        placeholder={"Students gpa"}
         value={gpa}
         onChangeText={(val) => setgpa(val)}
       />
-      <Button title="Add Subject" onPress={storeSubject} />
-      <Button style={{marginTop:10}} title="View Student" onPress={() => navigation.navigate('ViewStudent')} />
+      <Button title="Add Students" onPress={storeStudents} />
+      <Button style={{marginTop:10}} title="View Student" onPress={() => navigation.navigate('ViewStudentList')} />
     </View>
   );
 }
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Example02;
+export default AddStudent;

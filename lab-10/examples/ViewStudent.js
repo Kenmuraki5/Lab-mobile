@@ -3,11 +3,11 @@ import { ScrollView, Image } from "react-native";
 import firebase from "../database/firebaseDB";
 import { ListItem } from "react-native-elements";
 
-class Example01 extends Component {
+class ViewStudent extends Component {
   constructor() {
     super();
 
-    this.subjCollection = firebase.firestore().collection("subjects");
+    this.subjCollection = firebase.firestore().collection("students");
 
     this.state = {
       subject_list: [],
@@ -44,7 +44,7 @@ class Example01 extends Component {
 
   navigateToViewStudent = (item) => {
     // Navigate to the "ViewStudent" screen
-    this.props.navigation.navigate("UpdateStudent", {key: item});
+    this.props.navigation.navigate("UpdateStudentInfo", {key: item});
   };
   render() {
     return (
@@ -53,7 +53,7 @@ class Example01 extends Component {
           return (
             <ListItem key={i} bottomDivider>
               <ListItem.Content>
-                <ListItem.Title>{item.id}</ListItem.Title>
+                <ListItem.Title style={{fontWeight:"bold"}}>{item.id}</ListItem.Title>
                 <ListItem.Subtitle>{item.name}</ListItem.Subtitle>
                 <ListItem.Subtitle>{item.gpa}</ListItem.Subtitle>
               </ListItem.Content>
@@ -66,4 +66,4 @@ class Example01 extends Component {
   }
 }
 
-export default Example01;
+export default ViewStudent;

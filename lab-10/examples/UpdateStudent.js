@@ -3,7 +3,7 @@ import { StyleSheet, View, Alert } from "react-native";
 import firebase from "../database/firebaseDB";
 import { Button, Input, Image } from "react-native-elements";
 
-class Example03 extends Component {
+class UpdateStudent extends Component {
   constructor() {
     super();
 
@@ -18,7 +18,7 @@ class Example03 extends Component {
   componentDidMount() {
     const subjDoc = firebase
       .firestore()
-      .collection("subjects")
+      .collection("students")
       .doc(this.props.route.params.key);
     subjDoc.get().then((res) => {
       if (res.exists) {
@@ -41,10 +41,10 @@ class Example03 extends Component {
     this.setState(state);
   };
 
-  updateSubject() {
+  updateStudents() {
     const updateSubjDoc = firebase
       .firestore()
-      .collection("subjects")
+      .collection("students")
       .doc(this.state.key);
     updateSubjDoc
       .set({
@@ -55,22 +55,22 @@ class Example03 extends Component {
       .then(() => {
         Alert.alert(
           "Updating Alert",
-          "The subject was updated!! Pls check your DB!!"
+          "The Student was updated!! Pls check your DB!!"
         );
-        this.props.navigation.navigate("ViewStudent")
+        this.props.navigation.navigate("ViewStudentList")
       });
   }
-  deleteSubject() {
+  deleteStudents() {
     const delSubjDoc = firebase
       .firestore()
-      .collection("subjects")
+      .collection("students")
       .doc(this.state.key);
     delSubjDoc.delete().then((res) => {
       Alert.alert(
         "Deleting Alert",
-        "The subject was deleted!! Pls check your DB!!"
+        "The Student was deleted!! Pls check your DB!!"
       );
-      this.props.navigation.navigate("ViewStudent")
+      this.props.navigation.navigate("ViewStudentList")
     });
   }
 
@@ -83,31 +83,31 @@ class Example03 extends Component {
           containerStyle={{ marginLeft: "auto", marginRight: "auto" }}
         />
         <Input
-          placeholder={"Subject id"}
+          placeholder={"Students id"}
           value={this.state.id}
           onChangeText={(val) => this.inputValueUpdate(val, "id")}
         />
         <Input
-          placeholder={"Subject Name"}
+          placeholder={"Students Name"}
           value={this.state.name}
           onChangeText={(val) => this.inputValueUpdate(val, "name")}
         />
         <Input
-          placeholder={"Subject gpa"}
+          placeholder={"Students gpa"}
           value={this.state.gpa}
           onChangeText={(val) => this.inputValueUpdate(val, "gpa")}
         />
         <Button
-          title="Update Subject"
+          title="Update Students"
           onPress={() => {
-            this.updateSubject();
+            this.updateStudents();
           }}
         />
         <Button
-          title="Delete Subject"
+          title="Delete Students"
           containerStyle={{ marginTop: 10 }}
           onPress={() => {
-            this.deleteSubject();
+            this.deleteStudents();
           }}
         />
       </View>
@@ -122,4 +122,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Example03;
+export default UpdateStudent;
